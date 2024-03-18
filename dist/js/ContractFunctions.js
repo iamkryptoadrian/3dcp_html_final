@@ -93,7 +93,7 @@ async function fetchAccountDetails(userAddress) {
             fetchAndRenderPackages();
         }
 
-        if (currentPath.endsWith('direct_members/') || currentPath.endsWith('indirect_members/')) {
+        if (currentPath.endsWith('direct_members/') || currentPath.endsWith('Indirect_members/')) {
             createMembersTable(userAddress, 1, 20);
         }
 
@@ -511,13 +511,13 @@ async function changePage(page) {
         createUserPackagesTable(userAddress, page, parseInt(document.getElementById('Packagerecords-per-page').value, 10));   
     }
 
-    if (currentPath.endsWith('direct_members/') || currentPath.endsWith('indirect_members/')) {
+    if (currentPath.endsWith('direct_members/') || currentPath.endsWith('Indirect_members/')) {
         createMembersTable(userAddress, page, parseInt(document.getElementById('records-per-page').value, 10));
     }
 
 }
 
-if (currentPath.endsWith('direct_members/') || currentPath.endsWith('indirect_members/')) {
+if (currentPath.endsWith('direct_members/') || currentPath.endsWith('Indirect_members/')) {
     // Event listener for records-per-page selection change
     document.getElementById('records-per-page').addEventListener('change', function() {
         // Re-fetch and display the first page of data with the new records per page
