@@ -93,7 +93,7 @@ async function fetchAccountDetails(userAddress) {
             fetchAndRenderPackages();
         }
 
-        if (currentPath.endsWith('direct_members/') || currentPath.endsWith('Indirect_members/')) {
+        if (currentPath.endsWith('direct_members/') || currentPath.endsWith('indirect_members/')) {
             createMembersTable(userAddress, 1, 20);
         }
 
@@ -511,13 +511,13 @@ async function changePage(page) {
         createUserPackagesTable(userAddress, page, parseInt(document.getElementById('Packagerecords-per-page').value, 10));   
     }
 
-    if (currentPath.endsWith('direct_members/') || currentPath.endsWith('Indirect_members/')) {
+    if (currentPath.endsWith('direct_members/') || currentPath.endsWith('indirect_members/')) {
         createMembersTable(userAddress, page, parseInt(document.getElementById('records-per-page').value, 10));
     }
 
 }
 
-if (currentPath.endsWith('direct_members/') || currentPath.endsWith('Indirect_members/')) {
+if (currentPath.endsWith('direct_members/') || currentPath.endsWith('indirect_members/')) {
     // Event listener for records-per-page selection change
     document.getElementById('records-per-page').addEventListener('change', function() {
         // Re-fetch and display the first page of data with the new records per page
@@ -565,19 +565,8 @@ async function createUserPackagesTable(userAddress, currentPage = 1, recordsPerP
             const isWithdrawnText = pkg.isWithdrawn ? 'Yes' : 'No';
             const withdrawalClass = pkg.isWithdrawn ? 'text-success' : 'text-warning'; // Consider "text-warning" for pending
             
-            let statusText = 'Running';
-            let statusClass = 'text-success';
-            
-            const now = new Date();
-            const endTime = new Date(parseInt(pkg.endTime) * 1000);
-
-            if (pkg.isWithdrawn) {
-                statusText = 'Withdrawn';
-                statusClass = 'text-danger';
-            } else if (now > endTime) {
-                statusText = 'Finished';
-                statusClass = 'text-info'; // Use a different class for finished status if you like
-            }
+            const statusText = pkg.isWithdrawn ? 'Withdrawn' : 'Running'; // Adjust according to your logic
+            const statusClass = pkg.isWithdrawn ? 'text-danger' : 'text-success';
     
             const amountInvested = parseFloat(pkg.amountInvested).toFixed(2); // Ensure formatting to 2 decimal places
             const totalReturnPercentage = parseFloat(pkg.returnPercentage).toFixed(2); // Same for return percentage
