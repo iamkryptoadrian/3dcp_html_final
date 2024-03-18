@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Register Your Account Now</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;1,100;1,200&family=Urbanist:wght@100&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="/dist/css/register.css">
+      <link rel="stylesheet" href="/dist/css/modal.css">
+      <link rel="stylesheet" href="/dist/css/popup.css">
+      <link rel="stylesheet" href="/dist/css/general.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.0/web3.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   </head>
+   <body>
+      <!-- Loading GIF Container -->
+      <div id="loadingContainer">
+         <img id="loadingGif" src="/dist/images/loading_icon.gif" alt="Loading..."/>
+      </div>
+      <div class="box">
+         <h2>REGISTER WITH YOUR WALLET</h2>
+         <hr class="line">
+         <button id="connectBtn">Connect Wallet</button>
+         <div id="register_frm" class="hidden">
+            <label for="username">Sponsor ID</label>
+            <input type="text" placeholder="Enter Your SponsorID" id="sponsorID">
+         </div>
+         <div id="walletInfo" class="hidden">
+            <button id="registerBtn" class="hidden" onclick="proceedToUserRegistration()">Register Now</button>
+            <button id="disconnectBtn" class="hidden" onclick="disconnectWallet()">Disconnect Wallet</button>
+            <button id="LoginBtn" class="hidden" onclick="proceedToLogin()">Login Now</button>             
+         </div>
+     </div>
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+         <!-- Modal content -->
+         <div class="modal-content">
+            <div id="walletOptions">
+               <div class="flex-col items-start justify-start w-full p-10 bg-black-light rounded sm:rounded-none sm:bg-main-bg sm:p-5 sm:pt-20">
+                  <div class="modal-header">
+                     <span class="text-3xl text-white font-medium sm:text-2xl">Connect wallet</span>
+                     <span class="close">&times;</span>
+                  </div>
+                  <div class="flex w-full flex-col overflow-auto my-7.5 notranslate space-y-5">
+                     <div onclick="connectTrustWallet()" class="flex w-full p-5 cursor-pointer items-center rounded-small bg-white-100 hover:bg-main-blue sm:text-sm sm:py-2.5">
+                        <svg class="bg-white rounded-full flex-shrink-0 w-7.5 h-7.5" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                           <circle cx="15" cy="15" r="15" fill="#fff"></circle>
+                           <path d="M15 8.79a9.85 9.85 0 0 0 6.27 1.83c-.19 11.11-1.57 8.9-6.27 12-4.71-3.12-6.08-.91-6.27-12A9.86 9.86 0 0 0 15 8.79Z" fill="none" stroke="#3375bb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                        </svg>
+                        <div class="flex flex-col ml-5"><span class="text-base text-white">Trust Wallet</span><span class="text-sm text-white-500">DApp in app</span></div>
+                     </div>
+                     <div onclick="connectTokenPocket()" class="flex w-full p-5 cursor-pointer items-center rounded-small bg-white-100 hover:bg-main-blue sm:text-sm sm:py-2.5">
+                        <svg class="bg-white rounded-full flex-shrink-0 w-7.5 h-7.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <circle cx="12" cy="12" r="12" fill="#fff"></circle>
+                           <path d="M10.748 9.533V6.867H5.815c-.1 0-.167.066-.167.166V10.8c0 .1.067.167.167.167h1.9v6.866c0 .1.067.167.167.167h3.1c.1 0 .166-.067.166-.167v-8.3h-.4Z" fill="#29AEFF"></path>
+                           <path d="M14.182 6H9.748c-.1 0-.166.067-.166.167v10.8c0 .1.066.166.166.166h3.1c.1 0 .167-.066.167-.166v-2.734h1.2c2.267 0 4.1-1.833 4.1-4.1 0-2.3-1.867-4.133-4.133-4.133Z" fill="#2761E7"></path>
+                        </svg>
+                        <div class="flex flex-col ml-5"><span class="text-base text-white">TokenPocket</span><span class="text-sm text-white-500">DApp in app</span></div>
+                     </div>
+
+                     <div onclick="connectMetaMask()" class="flex w-full p-5 cursor-pointer items-center rounded-small bg-white-100 hover:bg-main-blue sm:text-sm sm:py-2.5">
+                        <svg class="bg-white rounded-full flex-shrink-0 w-7.5 h-7.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <circle cx="12" cy="12" r="12" fill="#fff"></circle>
+                           <path d="m18.487 5.4-5.625 4.162 1.046-2.453 4.58-1.709Z" fill="#E17726" stroke="#E17726" stroke-width=".25" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="m5.512 5.4 5.576 4.201-.996-2.492L5.512 5.4ZM16.462 15.05l-1.496 2.287 3.205.883.918-3.12-2.627-.05ZM4.917 15.1l.912 3.12 3.2-.883-1.492-2.286-2.62.05Z" fill="#E27625" stroke="#E27625" stroke-width=".25" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="m8.856 11.189-.89 1.343 3.171.144-.105-3.413-2.176 1.926ZM15.143 11.188l-2.209-1.964-.072 3.452 3.172-.145-.89-1.343ZM9.029 17.337l1.92-.927-1.653-1.287-.267 2.214ZM13.052 16.41l1.914.927-.262-2.214-1.652 1.287Z" fill="#E27625" stroke="#E27625" stroke-width=".25" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="m14.966 17.338-1.914-.927.155 1.243-.016.527 1.775-.843ZM9.029 17.338l1.78.843-.01-.527.15-1.243-1.92.927Z" fill="#D5BFB2" stroke="#D5BFB2" stroke-width=".25" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="m10.843 14.301-1.592-.466 1.124-.516.468.982ZM13.157 14.301l.468-.982 1.13.516-1.598.466Z" fill="#233447" stroke="#233447" stroke-width=".25" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="m9.029 17.337.278-2.286-1.77.05 1.492 2.236ZM14.693 15.05l.273 2.287 1.496-2.236-1.769-.05ZM16.034 12.531l-3.172.144.295 1.627.467-.983 1.13.516 1.28-1.304ZM9.251 13.835l1.124-.516.467.983.295-1.627-3.171-.144 1.285 1.304Z" fill="#CC6228" stroke="#CC6228" stroke-width=".25" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="m7.966 12.531 1.33 2.592-.045-1.288-1.285-1.304ZM14.754 13.835l-.05 1.288 1.33-2.592-1.28 1.304ZM11.138 12.675l-.295 1.626.373 1.92.083-2.53-.161-1.016ZM12.862 12.675l-.156 1.01.078 2.536.373-1.92-.295-1.626Z" fill="#E27525" stroke="#E27525" stroke-width=".25" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="m13.158 14.302-.373 1.92.267.189 1.652-1.288.05-1.287-1.596.466ZM9.251 13.836l.045 1.287 1.652 1.288.268-.189-.373-1.92-1.592-.466Z" fill="#F5841F" stroke="#F5841F" stroke-width=".25" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="m13.19 18.181.017-.527-.144-.122h-2.126l-.139.122.011.527-1.78-.843.623.51 1.263.872h2.164l1.269-.872.618-.51-1.775.843Z" fill="#C0AC9D" stroke="#C0AC9D" stroke-width=".25" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="m13.052 16.411-.267-.189h-1.569l-.267.19-.15 1.242.139-.122h2.125l.145.122-.156-1.243Z" fill="#161616" stroke="#161616" stroke-width=".25" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="m18.727 9.834.473-2.297-.712-2.137-5.436 4.024 2.092 1.764 2.954.86.651-.76-.283-.205.45-.41-.345-.267.451-.344-.295-.228ZM4.8 7.537l.479 2.297-.306.228.456.344-.345.266.45.411-.283.205.65.76 2.955-.86 2.092-1.764L5.512 5.4 4.8 7.537Z" fill="#763E1A" stroke="#763E1A" stroke-width=".25" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="m18.098 12.049-2.955-.86.89 1.343-1.33 2.591 1.759-.022h2.626l-.99-3.052ZM8.856 11.189l-2.954.86-.985 3.052h2.62l1.759.022-1.33-2.591.89-1.343ZM12.862 12.676l.19-3.252.856-2.314h-3.817l.857 2.314.19 3.252.071 1.021.006 2.526h1.57l.005-2.526.072-1.02Z" fill="#F5841F" stroke="#F5841F" stroke-width=".25" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <div class="flex flex-col ml-5"><span class="text-base text-white">MetaMask</span><span class="text-sm text-white-500">Desktop / DApp in app</span></div>
+                     </div>
+
+                     <div style="filter: brightness(0.5); cursor: not-allowed;" class="flex w-full p-5 cursor-pointer items-center rounded-small bg-white-100 hover:bg-main-blue sm:text-sm sm:py-2.5">
+                        <svg class="bg-white rounded-full flex-shrink-0 w-7.5 h-7.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <circle cx="12" cy="12" r="12" fill="#fff"></circle>
+                           <path d="M8.102 9.441a5.449 5.449 0 0 1 7.796 0l.259.264a.284.284 0 0 1 0 .396l-.887.9a.136.136 0 0 1-.194 0l-.357-.362a3.801 3.801 0 0 0-5.438 0l-.382.388a.136.136 0 0 1-.195 0l-.886-.9a.283.283 0 0 1 0-.397l.284-.289Zm9.628 1.863.79.802a.283.283 0 0 1 0 .396l-3.557 3.616a.272.272 0 0 1-.39 0l-2.524-2.566a.068.068 0 0 0-.098 0l-2.524 2.566a.272.272 0 0 1-.39 0l-3.556-3.616a.283.283 0 0 1 0-.396l.788-.802a.272.272 0 0 1 .39 0l2.524 2.566c.027.028.07.028.098 0l2.524-2.566a.272.272 0 0 1 .39 0l2.524 2.566c.027.028.07.028.097 0l2.525-2.566a.272.272 0 0 1 .39 0Z" fill="#006FFF"></path>
+                        </svg>
+                        <div class="flex flex-col ml-5"><span class="text-base text-white">WalletConnect</span><span class="text-sm text-white-500">Any wallet and browser</span></div>
+                     </div>
+                  </div>
+                  <span class="text-white-500 text-center text-base self-center">Got questions?<span class="text-white ml-1.5 cursor-pointer hover:text-white-700">Contact support</span></span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script>
+         // Get the modal
+         var modal = document.getElementById("myModal");      
+         var btn = document.getElementById("connectBtn");        
+         var span = document.getElementsByClassName("close")[0];        
+         btn.onclick = function() {
+             modal.style.display = "block";
+         }         
+         span.onclick = function() {
+             modal.style.display = "none";
+         }         
+         window.onclick = function(event) {
+             if (event.target == modal) {
+                 modal.style.display = "none";
+             }
+         }
+      </script>
+      <script src="/dist/js/popup.js"></script>
+      <script src="/dist/js/ContractFunctionsRegister.js"></script>
+      <script src="/dist/js/register.js"></script>
+   </body>
+</html>

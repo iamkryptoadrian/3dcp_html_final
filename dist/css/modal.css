@@ -1,0 +1,189 @@
+
+.my-7\.5 {
+	margin-top: 1.875rem;
+	margin-bottom: 1.875rem
+}
+
+.ml-1\.5 {
+	margin-left: .375rem
+}
+
+.ml-5 {
+	margin-left: 1.25rem
+}
+
+.flex {
+	display: flex
+}
+
+.h-7\.5 {
+	height: 1.875rem
+}
+
+.w-full {
+	width: 100%
+}
+
+.w-7\.5 {
+	width: 1.875rem
+}
+
+.flex-shrink-0 {
+	flex-shrink: 0
+}
+
+.cursor-pointer {
+	cursor: pointer
+}
+
+.flex-col {
+	flex-direction: column
+}
+
+.items-start {
+	align-items: flex-start
+}
+
+.items-center {
+	align-items: center
+}
+
+.justify-start {
+	justify-content: flex-start
+}
+
+.space-y-5>:not([hidden])~:not([hidden]) {
+	--tw-space-y-reverse: 0;
+	margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+	margin-bottom: calc(1.25rem * var(--tw-space-y-reverse))
+}
+
+.self-center {
+	align-self: center
+}
+
+.overflow-auto {
+	overflow: auto
+}
+
+.rounded-full {
+	border-radius: 9999px
+}
+
+.rounded {
+	border-radius: 20px
+}
+
+.rounded-small {
+	border-radius: 15px
+}
+
+.bg-white-100 {
+	background-color: hsla(0, 0%, 100%, .1)
+}
+
+.bg-white {
+	--tw-bg-opacity: 1;
+	background-color: rgba(255, 255, 255, var(--tw-bg-opacity))
+}
+
+.bg-black-light {
+	background-color: #001e11
+}
+
+.p-5 {
+	padding: 1.25rem
+}
+
+.p-10 {
+	padding: 2.5rem
+}
+
+.text-center {
+	text-align: center
+}
+
+.text-base {
+	font-size: 1rem;
+	line-height: 1.5rem
+}
+
+.text-3xl {
+	font-size: 1.875rem;
+	line-height: 2.25rem
+}
+
+.text-sm {
+	font-size: .875rem;
+	line-height: 1.25rem
+}
+
+.font-medium {
+	font-weight: 500
+}
+
+.text-white {
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity))
+}
+
+.text-white-500 {
+	color: hsla(0, 0%, 100%, .5)
+}
+
+.hover\:bg-main-blue:hover {
+	--tw-bg-opacity: 1;
+	background-color: #1c764b
+}
+
+.hover\:text-white-700:hover {
+	color: hsla(0, 0%, 100%, .7)
+}
+
+@media (max-width:767px) {
+	.sm\:rounded-none {
+		border-radius: 25px
+	}
+
+	.sm\:bg-main-bg {
+		--tw-bg-opacity: 1;
+		background-color: #001e11
+	}
+
+	.sm\:p-5 {
+		padding: 1.25rem
+	}
+
+	.sm\:py-2\.5 {
+		padding-top: .625rem;
+		padding-bottom: .625rem
+	}
+
+	.sm\:pt-20 {
+		padding-top: 2rem
+	}
+
+	.sm\:text-sm {
+		font-size: .875rem;
+		line-height: 1.25rem
+	}
+
+	.sm\:text-2xl {
+		font-size: 1.5rem;
+		line-height: 2rem
+	}
+}
+
+::-webkit-scrollbar {
+	width: 7.5px;
+	height: 7.5px
+}
+
+::-webkit-scrollbar-corner {
+	background-color: transparent
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, .25);
+	border-radius: 20px
+}

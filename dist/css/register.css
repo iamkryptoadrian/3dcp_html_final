@@ -1,0 +1,223 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+  background-image: url('https://images.unsplash.com/photo-1610208956588-61f6c2e6136a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.box {
+    width: 90%;
+    max-width: 400px;
+    background-color: rgb(0 0 0 / 13%);
+    border-radius: 15px;
+    padding: 20px;
+    color: #fff;
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 0%);
+    backdrop-filter: blur(8.5px);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #ffff; /* A bright color for emphasis */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    color:#fff ;
+}
+
+
+#registerBtn {
+    background-color: #380a62;
+    color: #fff;
+    margin-top: 20px;
+}
+
+#LoginBtn {
+    background-color: #370a6200;
+    color: #fff;
+}
+
+#connectBtn {
+    background-color: #380a62;
+    color: #fff;
+    margin-top: 20px;
+}
+
+#disconnectBtn {
+    background-color: #620a2f;
+    color: #fff;
+}
+
+
+
+#walletAddress, #registrationStatus {
+    text-align: center;
+    word-break: break-all;
+    margin: 15px 0;
+}
+
+.registration-status {
+    color: #fbc531;
+    margin-bottom: 10px;
+
+}
+
+.line {
+    width: 40%;
+    margin: auto;
+    padding-bottom: 0px;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Add your popup modal styles here */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    border-radius: 15px;
+}
+.modal-content {
+    background-color: #18191a;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 0px;
+    width: 50%; /* Could be more or less, depending on screen size */
+    border-radius: 25px;
+}
+
+@media screen and (min-width:1100px) {
+    .modal-content {
+        background-color: #18191a;
+        margin: 5% auto;
+        padding: 0px;
+        width: 30%;
+        border-radius: 25px;
+    }
+    .box {
+        max-width: 570px;
+    }
+}
+
+@media screen and (max-width:990px) {
+    .modal-content {
+        background-color: #18191a;
+        margin: 5% auto;
+        padding: 0px;
+        width: 45%;
+        border-radius: 25px;
+    }
+}
+
+@media screen and (max-width:770px) {
+    .modal-content {
+        background-color: #18191a;
+        margin: 20% auto;
+        padding: 0px;
+        width: 70%;
+        border-radius: 25px;
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    background: #535353;
+    border-radius: 40px;
+    width: 32px;
+    padding: 0px 0px 0px 8px;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+#walletInfo {
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+.hidden {
+    display: none !important;
+}

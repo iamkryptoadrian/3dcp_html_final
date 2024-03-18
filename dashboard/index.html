@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-1 light">
+   <!-- BEGIN: Head -->
+   <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+   <head>
+      <meta charset="utf-8">
+      <link href="/dist/images/robots_logo.png" rel="shortcut icon">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Midone admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
+      <meta name="keywords" content="admin template, Midone Admin Template, dashboard template, flat admin template, responsive admin template, web app">
+      <meta name="author" content="LEFT4CODE">
+      <title>Dashboard - Affiliate Program</title>
+      <!-- BEGIN: CSS Assets-->
+      <link rel="stylesheet" href="/dist/css/app.css" />
+      <link rel="stylesheet" href="/dist/css/popup.css">
+      <link rel="stylesheet" href="/dist/css/general.css">
+      <!-- END: CSS Assets-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.0/web3.min.js"></script>
+   </head>
+   <!-- END: Head -->
+   <body class="py-5">
+      <!-- Loading GIF Container -->
+      <div id="loadingContainer">
+         <img id="loadingGif" src="/dist/images/loading_icon.gif" alt="Loading..."/>
+      </div>
+      <!-- BEGIN: Mobile Menu -->
+      <div class="mobile-menu md:hidden">
+         <div class="mobile-menu-bar">
+            <a href="#" class="flex mr-auto">
+            <img alt="Midone - HTML Admin Template" class="w-40" src="/dist/images/robots_logo.png">
+            </a>
+            <a href="javascript:;" class="mobile-menu-toggler"> <i data-lucide="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
+         </div>
+         <div class="scrollable">
+            <a href="javascript:;" class="mobile-menu-toggler"> <i data-lucide="x-circle" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
+            <ul class="scrollable__content py-2">
+               <li>
+                  <a href="/dashboard/" class="menu menu--active">
+                     <div class="menu__icon"> <i data-lucide="home"></i> </div>
+                     <div class="menu__title">
+                        Dashboard 
+                        <div class="menu__sub-icon transform rotate-180"></div>
+                     </div>
+                  </a>
+               </li>
+               <li>
+                  <a href="/dashboard/direct_members/" class="menu">
+                     <div class="menu__icon"> <i data-lucide="user-check"></i> </div>
+                     <div class="menu__title"> Direct Members </div>
+                  </a>
+               </li>
+               <li>
+                  <a href="/dashboard/indirect_members/" class="menu">
+                     <div class="menu__icon"> <i data-lucide="user-check"></i> </div>
+                     <div class="menu__title"> Indirect Members </div>
+                  </a>
+               </li>
+               <li>
+                  <a href="/dashboard/buy-packages" class="menu">
+                     <div class="menu__icon"> <i data-lucide="shopping-bag"></i> </div>
+                     <div class="menu__title">
+                        Buy Packages
+                     </div>
+                  </a>
+               </li>
+               <li>
+                  <a href="/dashboard/packages_report/" class="menu">
+                     <div class="menu__icon"> <i data-lucide="layers"></i> </div>
+                     <div class="menu__title"> Packages Report </div>
+                  </a>
+               </li>
+               <li>
+                  <a href="" class="menu">
+                     <div class="menu__icon"> <i data-lucide="award"></i> </div>
+                     <div class="menu__title"> Status View </div>
+                  </a>
+               </li>
+               <li>
+                  <a href="/dashboard/direct_commissions/" class="menu">
+                     <div class="menu__icon"> <i data-lucide="sliders"></i> </div>
+                     <div class="menu__title"> Direct Commissions </div>
+                  </a>
+               </li>
+               <li>
+                  <a href="/dashboard/indirect_commissions/" class="menu">
+                     <div class="menu__icon"> <i data-lucide="slack"></i> </div>
+                     <div class="menu__title"> InDirect Commissions </div>
+                  </a>
+               </li>
+               <li>
+                  <a href="/dashboard/matching_bonus/" class="menu">
+                     <div class="menu__icon"> <i data-lucide="git-pull-request"></i> </div>
+                     <div class="menu__title"> Matching Bonus </div>
+                  </a>
+               </li>
+               <li class="nav__devider my-6"></li>
+               <li>
+                  <a href="javascript:;" class="menu">
+                     <div class="menu__icon"> <i data-lucide="plus-circle"></i> </div>
+                     <div class="menu__title">
+                        Get Support 
+                        <div class="menu__sub-icon "> <i data-lucide="chevron-down"></i> </div>
+                     </div>
+                  </a>
+                  <ul class="">
+                     <li>
+                        <a href="mailto:" class="menu">
+                           <div class="menu__icon"> <i data-lucide="activity"></i> </div>
+                           <div class="menu__title"> Write Us Email </div>
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <!-- END: Mobile Menu -->
+      <div class="flex mt-[4.7rem] md:mt-0">
+         <!-- BEGIN: Side Menu -->
+         <nav class="side-nav">
+            <a href="#" class="intro-x flex items-center pl-5 pt-4">
+            <img alt="Midone - HTML Admin Template" class="w-full" src="/dist/images/robots_logo.png">
+            </a>
+            <div class="side-nav__devider my-6"></div>
+            <ul>
+               <li>
+                  <a href="/dashboard/" class="side-menu side-menu--active">
+                     <div class="side-menu__icon"> <i data-lucide="home"></i> </div>
+                     <div class="side-menu__title">
+                        Dashboard 
+                        <div class="side-menu__sub-icon transform rotate-180"></div>
+                     </div>
+                  </a>
+               </li>
+               <li>
+                  <a href="direct_members/" class="side-menu">
+                     <div class="side-menu__icon"> <i data-lucide="user-check"></i> </div>
+                     <div class="side-menu__title"> Direct Members </div>
+                  </a>
+               </li>
+               <li>
+                  <a href="indirect_members/" class="side-menu">
+                     <div class="side-menu__icon"> <i data-lucide="user-check"></i> </div>
+                     <div class="side-menu__title"> Indirect Members </div>
+                  </a>
+               </li>
+               <li>
+                  <a href="buy-packages" class="side-menu">
+                     <div class="side-menu__icon"> <i data-lucide="shopping-bag"></i> </div>
+                     <div class="side-menu__title">
+                        Buy Packages
+                     </div>
+                  </a>
+               </li>
+               <li>
+                  <a href="packages_report/" class="side-menu">
+                     <div class="side-menu__icon"> <i data-lucide="layers"></i> </div>
+                     <div class="side-menu__title"> Packages Report </div>
+                  </a>
+               </li>
+               <li>
+                  <a href="" class="side-menu">
+                     <div class="side-menu__icon"> <i data-lucide="award"></i> </div>
+                     <div class="side-menu__title"> Status View </div>
+                  </a>
+               </li>
+               <li>
+                  <a href="direct_commissions/" class="side-menu">
+                     <div class="side-menu__icon"> <i data-lucide="sliders"></i> </div>
+                     <div class="side-menu__title"> Direct Commissions </div>
+                  </a>
+               </li>
+               <li>
+                  <a href="indirect_commissions/" class="side-menu">
+                     <div class="side-menu__icon"> <i data-lucide="slack"></i> </div>
+                     <div class="side-menu__title"> InDirect Commissions </div>
+                  </a>
+               </li>
+               <li>
+                  <a href="matching_bonus/" class="side-menu">
+                     <div class="side-menu__icon"> <i data-lucide="git-pull-request"></i> </div>
+                     <div class="side-menu__title"> Matching Bonus </div>
+                  </a>
+               </li>
+               <li class="side-nav__devider my-6"></li>
+               <li>
+                  <a href="javascript:;" class="side-menu">
+                     <div class="side-menu__icon"> <i data-lucide="plus-circle"></i> </div>
+                     <div class="side-menu__title">
+                        Get Support 
+                        <div class="side-menu__sub-icon "> <i data-lucide="chevron-down"></i> </div>
+                     </div>
+                  </a>
+                  <ul class="">
+                     <li>
+                        <a href="mailto:" class="side-menu">
+                           <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
+                           <div class="side-menu__title"> Write Us Email </div>
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </nav>
+         <!-- END: Side Menu -->
+         <!-- BEGIN: Content -->
+         <div class="content">
+            <!-- BEGIN: Top Bar -->
+            <div class="top-bar">
+               <!-- BEGIN: Breadcrumb -->
+               <nav aria-label="breadcrumb" class="-intro-x mr-auto hidden sm:flex">
+                  <ol class="breadcrumb">
+                     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                     <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                  </ol>
+               </nav>
+               <!-- END: Breadcrumb -->
+               <!-- BEGIN: Search -->
+               <div class="intro-x relative mr-3 sm:mr-6">
+                  <div class="search hidden sm:block">
+                     <input type="text" class="search__input form-control border-transparent" placeholder="Search...">
+                     <i data-lucide="search" class="search__icon dark:text-slate-500"></i> 
+                  </div>
+               </div>
+               <!-- END: Search --> 
+               <!-- BEGIN: Account Menu -->
+               <div class="intro-x dropdown w-8 h-8">
+                  <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in" role="button" aria-expanded="false" data-tw-toggle="dropdown">
+                     <img alt="Midone - HTML Admin Template" src="/dist/images/profile-5.jpg">
+                  </div>
+                  <div class="dropdown-menu w-56">
+                     <ul class="dropdown-content bg-primary text-white">
+                        <li class="p-2">
+                           <div class="font-medium">Your ID: <span id="userID"></span></div>
+                           <div class="text-xs text-white/70 mt-0.5 dark:text-slate-500">Connected Wallet: <span id="connected_wallet"></span></div>
+                        </li>
+                        <li>
+                           <hr class="dropdown-divider border-white/[0.08]">
+                        </li>
+                        <li id="logout_btn" onclick="Dashboardlogout()">
+                           <a href="#" class="dropdown-item hover:bg-white/5"> <i data-lucide="toggle-right" class="w-4 h-4 mr-2"></i> Logout </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <!-- END: Account Menu -->
+            </div>
+            <!-- END: Top Bar -->
+            <div class="grid grid-cols-12 gap-6">
+               <div class="col-span-12 2xl:col-span-9">
+                  <div class="grid grid-cols-12 gap-6">
+                     <!-- BEGIN: General Report -->
+                     <div class="col-span-12 mt-8">
+                        <div class="flex items-center h-10 intro-y">
+                           <h1 class="mr-5 text-3xl font-medium truncate">
+                              Welcome User <strong><span class="user-id-display"></span></strong> !
+                           </h1>
+                           <a href="" onclick="window.location.reload(true);" class="flex items-center ml-auto text-primary"> <i data-lucide="refresh-ccw" class="w-4 h-4 mr-3"></i> Reload Data </a>
+                        </div>
+                        <div class="grid grid-cols-12 gap-6 mt-5 mb-6">
+                           <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                              <div class="report-box zoom-in">
+                                 <div class="box p-5">
+                                    <div class="flex">
+                                       <i data-lucide="credit-card" class="report-box__icon text-primary"></i> 
+                                       <div class="ml-auto">
+                                          <div class="report-box__indicator bg-success tooltip cursor-pointer" title="Your Total Investment"><i data-lucide="chevron-up" class="w-4 h-4"></i> </div>
+                                       </div>
+                                    </div>
+                                    <div class="text-3xl font-medium leading-8 mt-6">$<span id="selfBusiness">0</span></div>
+                                    <div class="text-base text-slate-500 mt-1">Self Investment</div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                              <div class="report-box zoom-in">
+                                 <div class="box p-5">
+                                    <div class="flex">
+                                       <i data-lucide="shopping-bag" class="report-box__icon text-pending"></i> 
+                                       <div class="ml-auto">
+                                          <div class="report-box__indicator bg-success tooltip cursor-pointer" title="Your Team Total Investment"><i data-lucide="chevron-up" class="w-4 h-4"></i> </div>
+                                       </div>
+                                    </div>
+                                    <div class="text-3xl font-medium leading-8 mt-6">$<span id="totalTeamVolume">0</span></div>
+                                    <div class="text-base text-slate-500 mt-1">Team Investment</div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                              <div class="report-box zoom-in">
+                                 <div class="box p-5">
+                                    <div class="flex">
+                                       <i data-lucide="user" class="report-box__icon text-warning"></i> 
+                                       <div class="ml-auto">
+                                          <div class="report-box__indicator bg-success tooltip cursor-pointer" title="Your Direct Members"><i data-lucide="chevron-up" class="w-4 h-4"></i> </div>
+                                       </div>
+                                    </div>
+                                    <div class="text-3xl font-medium leading-8 mt-6"><span id="totalDirects">0</span></div>
+                                    <div class="text-base text-slate-500 mt-1">Total Directs</div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                              <div class="report-box zoom-in">
+                                 <div class="box p-5">
+                                    <div class="flex">
+                                       <i data-lucide="users" class="report-box__icon text-success"></i> 
+                                       <div class="ml-auto">
+                                          <div class="report-box__indicator bg-success tooltip cursor-pointer" title="Your Indirect Members"><i data-lucide="chevron-up" class="w-4 h-4"></i> </div>
+                                       </div>
+                                    </div>
+                                    <div class="text-3xl font-medium leading-8 mt-6"><span id="totalIndirects">0</span></div>
+                                    <div class="text-base text-slate-500 mt-1">Total Indirect</div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <br>
+                        <div class="box p-5">
+                           <h2 class="mr-5 text-lg font-medium truncate mb-2">
+                              Your Referral Link
+                           </h2>
+                           <div class="flex">
+                              <div class="w-full relative text-gray-700">
+                                 <input disabled id="referral_link" type="text" class="form-control py-3 px-4 w-full bg-gray-200 border-gray-200 pr-10 placeholder-theme-13">
+                              </div>
+                              <button id="copyReferralLink" class="btn btn-primary ml-2"><i data-tw-merge="" data-lucide="copy" class="stroke-1.5 mr-2 h-4 w-4"></i> Copy</button>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- END: General Report -->
+                     <!-- BEGIN: Sales Report -->
+                     <div class="col-span-12">
+                        <div class="intro-y block sm:flex items-center h-10">
+                           <h2 class="text-lg font-medium truncate mr-5">
+                              Crypto Price
+                           </h2>
+                        </div>
+                        <div class="intro-y box p-5 mt-12 sm:mt-5">
+                           <div class="flex flex-col md:flex-row md:items-center">
+                              <div class="flex">
+                                 <div>
+                                    <div class="text-primary dark:text-slate-300 text-lg xl:text-xl font-medium">Live Crypto Price</div>
+                                 </div>
+                                 <div class="w-px h-12 border border-r border-dashed border-slate-200 dark:border-darkmode-300 mx-4 xl:mx-5"></div>
+                                 <a href="https://accounts.binance.com/register?ref=140016868" target="_blank" data-tw-merge="" class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&amp;:hover:not(:disabled)]:bg-opacity-90 [&amp;:hover:not(:disabled)]:border-opacity-90 [&amp;:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed bg-primary border-primary text-white dark:border-primary mb-2 mr-2 w-32 mb-2 mr-2 w-32">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="dollar-sign" data-tw-merge="" data-lucide="dollar-sign" class="lucide lucide-dollar-sign stroke-1.5 w-5 h-5 mr-2 h-4 w-4">
+                                       <line x1="12" y1="1" x2="12" y2="23"></line>
+                                       <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"></path>
+                                    </svg>
+                                    BUY $USDT
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="h-[275px] mt-6">
+                              <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinPriceBlock.js"></script>
+                              <div id="coinmarketcap-widget-coin-price-block" coins="1,1027,825,1839,74,5994,52,5426" currency="USD" theme="light" transparent="true" show-symbol-logo="true"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-span-12 2xl:col-span-3">
+                  <div class="2xl:border-l -mb-10 pb-10">
+                     <div class="2xl:pl-6 grid grid-cols-12 gap-x-6 2xl:gap-x-0 gap-y-6">
+                        <!--TOTAL INCOME OF USER-->
+                        <div class="box intro-x mt-6 bg-primary p-5 col-span-12">
+                           <div class="flex flex-wrap gap-3">
+                              <div class="mr-auto">
+                                 <div class="flex items-center leading-3 text-white text-opacity-70 dark:text-slate-300">
+                                    Total Income
+                                    <div data-placement="top" title="Direct, Indiretc and Matching Bonus" class="tooltip cursor-pointer">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="alert-circle" data-lucide="alert-circle" class="lucide lucide-alert-circle stroke-1.5 ml-1.5 h-4 w-4">
+                                          <circle cx="12" cy="12" r="10"></circle>
+                                          <line x1="12" y1="8" x2="12" y2="12"></line>
+                                          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                       </svg>
+                                    </div>
+                                 </div>
+                                 <div class="relative mt-3.5 pl-4 text-2xl font-medium leading-5 text-white">
+                                    <span class="absolute left-0 top-0 -mt-1.5 text-xl">$<span id="totalIncomeToday"></span></span>
+                                 </div>
+                              </div>
+                              <a class="flex h-12 w-12 items-center justify-center rounded-full bg-white bg-opacity-20 text-white hover:bg-opacity-30 dark:bg-darkmode-300" href="/dashboard/direct_commissions/">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="external-link" data-lucide="external-link" class="lucide lucide-external-link stroke-1.5 w-5 h-5 mx-auto block">
+                                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                 </svg>
+                              </a>
+                           </div>
+                        </div>
+                        <!--END: TOTAL INCOME OF USER-->
+                        <!--BEGIN: SUMMARY-->
+                        <div class="col-span-12">
+                           <div class="box max-h-full">
+                              <div class="top-0 px-5 pb-6 pt-5">
+                                 <div class="flex items-center">
+                                    <div class="mr-5 truncate text-lg font-medium">
+                                       Summary Report
+                                    </div>
+                                    <a class="ml-auto flex items-center text-primary" onclick="window.location.reload(true);" href="" >
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="refresh-ccw" data-lucide="refresh-ccw" class="lucide lucide-refresh-ccw stroke-1.5 mr-3 h-4 w-4">
+                                          <path d="M3 2v6h6"></path>
+                                          <path d="M21 12A9 9 0 006 5.3L3 8"></path>
+                                          <path d="M21 22v-6h-6"></path>
+                                          <path d="M3 12a9 9 0 0015 6.7l3-2.7"></path>
+                                       </svg>
+                                       Refresh
+                                    </a>
+                                 </div>
+                              </div>
+                              <div class="px-5 pb-5">
+                                 <div class="tab-pane active grid grid-cols-12 gap-y-6 visible opacity-100">
+                                    <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-12">
+                                       <div class="text-slate-500">My Sponsor</div>
+                                       <div class="mt-1.5 flex items-center">
+                                          <div class="text-lg">ID: <span id="sponsorID">None</span></div>
+                                       </div>
+                                    </div>
+                                    <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-12">
+                                       <div class="text-slate-500">My Rank</div>
+                                       <div class="mt-1.5 flex items-center">
+                                          <div class="text-lg">Rank: <span id="currentUserRank">1</span></div>
+                                       </div>
+                                    </div>
+                                    <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-12">
+                                       <div class="text-slate-500">Total Withdrawals</div>
+                                       <div class="mt-1.5 flex items-center">
+                                          <div class="text-lg">$<span id="totalWithdrawals">0</span></div>
+                                       </div>
+                                    </div>
+                                    <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-12">
+                                       <div class="text-slate-500">Total Matching Bonus</div>
+                                       <div class="mt-1.5 flex items-center">
+                                          <div class="text-lg">$<span id="totalMatchingBonus">0</span></div>
+                                       </div>
+                                    </div>
+                                    <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-12">
+                                       <div class="text-slate-500">Total Direct Commission</div>
+                                       <div class="mt-1.5 flex items-center">
+                                          <div class="text-lg">$<span id="directCommissionTotal">0</span></div>
+                                       </div>
+                                    </div>
+                                    <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-12">
+                                       <div class="text-slate-500">Total InDirect Commission</div>
+                                       <div class="mt-1.5 flex items-center">
+                                          <div class="text-lg">$<span id="indirectCommissionTotal">0</span></div>
+                                       </div>
+                                    </div>
+                                    <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-12">
+                                       <div class="text-slate-500">Total Active Members</div>
+                                       <div class="mt-1.5 flex items-center">
+                                          <div class="text-lg"><span id="totalPaidMembersCount">0</span> Members</div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!--END: SUMMARY-->
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- END: Content -->
+      </div>
+      <!-- BEGIN: Dark Mode Switcher-->
+      <div class="dark-mode-switcher cursor-pointer shadow-md fixed bottom-0 right-0 box border rounded-full w-40 h-12 flex items-center justify-center z-50 mb-10 mr-10">
+         <div class="mr-4 text-slate-600 dark:text-slate-200">Dark Mode</div>
+         <div class="dark-mode-switcher__toggle border"></div>
+      </div>
+      <!-- END: Dark Mode Switcher-->
+      <!-- BEGIN: JS Assets-->
+      <script src="/dist/js/app.js"></script>
+      <!-- END: JS Assets-->
+      <!--custom-->
+      <script src="/dist/js/ContractFunctions.js"></script>
+      <script src="/dist/js/main.js"></script>
+      <script src="/dist/js/popup.js"></script>
+   </body>
+</html>

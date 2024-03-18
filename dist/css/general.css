@@ -1,0 +1,20 @@
+#loadingContainer {
+    display: none; 
+    position: fixed; 
+    inset: 0; background: rgb(0 0 0 / 74%); 
+    z-index: 10000; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+#loadingGif {
+    background: #fff; 
+    width: 10%; 
+    border-radius: 15%;
+}
+
+@media screen and (max-width:575px) {
+    #loadingGif {
+        width: 40%; 
+    }
+}

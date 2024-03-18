@@ -1,0 +1,31 @@
+/*ALERT POPUP*/
+
+.alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    opacity: 0; /* Start hidden */
+    position: fixed; /* Stay in place */
+    top: -50px; /* Position the alert out of view */
+    right: 15px; /* 15px from the right */
+    z-index: 99999; /* Stay on top */
+    transition: top 0.5s, opacity 0.5s; /* Animate the alert (slide in and fade) */
+  }
+  
+  .alert.success {background-color: #04AA6D;} /* Green for success messages */
+  .alert.error {background-color: #f44336;} /* Red for error messages */
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
