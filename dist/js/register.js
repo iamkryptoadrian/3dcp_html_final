@@ -153,5 +153,5 @@ function proceedToDashboard() {
 }
 
 function proceedToLogin() {
-    window.location.href = '/login'; 
+    window.location.href = '/'; 
 }
